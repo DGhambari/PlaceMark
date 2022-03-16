@@ -1,0 +1,12 @@
+<div id='map' style='width: 100%; height: 60vh;'></div>
+<br></br>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiZGdoYW1iYXJpIiwiYSI6ImNsMHNkcHhtbTBjaTQzamp3YjNhaGh2bG0ifQ.ttV8VrZUju1c2aVCyf7Dxw';
+  const map = new mapboxgl.Map({
+    container: 'map', // container ID
+    //style: 'mapbox://styles/mapbox/satellite-streets-v11',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [-7.7, 53.5], // starting position [lng, lat]
+    zoom: 6 // starting zoom
+  });
+</script>
