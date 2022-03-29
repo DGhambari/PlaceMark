@@ -1,8 +1,8 @@
 import { aboutController } from "./controllers/about-controller.js";
 import { accountsController } from "./controllers/accounts-controller.js";
 import { dashboardController } from "./controllers/dashboard-controller.js";
-import { playlistController } from "./controllers/playlist-controller.js";
-import { trackController } from "./controllers/track-controller.js";
+import { placemarkController } from "./controllers/placemark-controller.js";
+import { pointOfInterestController } from "./controllers/pointOfInterest-controller.js";
 
 export const webRoutes = [
   { method: "GET", path: "/", config: accountsController.index },
@@ -15,15 +15,15 @@ export const webRoutes = [
   { method: "GET", path: "/about", config: aboutController.index },
 
   { method: "GET", path: "/dashboard", config: dashboardController.index },
-  { method: "POST", path: "/dashboard/addplaylist", config: dashboardController.addPlaylist },
-  { method: "GET", path: "/dashboard/deleteplaylist/{id}", config: dashboardController.deletePlaylist },
+  { method: "POST", path: "/dashboard/addplacemark", config: dashboardController.addPlacemark },
+  { method: "GET", path: "/dashboard/deleteplacemark/{id}", config: dashboardController.deletePlacemark },
 
-  { method: "GET", path: "/playlist/{id}", config: playlistController.index },
-  { method: "POST", path: "/playlist/{id}/addtrack", config: playlistController.addTrack },
-  { method: "GET", path: "/playlist/{id}/deletetrack/{trackid}", config: playlistController.deleteTrack },
+  { method: "GET", path: "/placemark/{id}", config: placemarkController.index },
+  { method: "POST", path: "/placemark/{id}/addpointOfInterest", config: placemarkController.addPointOfInterest },
+  { method: "GET", path: "/placemark/{id}/deletepointOfInterest/{pointOfInterestid}", config: placemarkController.deletePointOfInterest },
 
-  { method: "GET", path: "/track/{id}/edittrack/{trackid}", config: trackController.index },
-  { method: "POST", path: "/track/{id}/updatetrack/{trackid}", config: trackController.update },
+  { method: "GET", path: "/pointOfInterest/{id}/editpointOfInterest/{pointOfInterestid}", config: pointOfInterestController.index },
+  { method: "POST", path: "/pointOfInterest/{id}/updatepointOfInterest/{pointOfInterestid}", config: pointOfInterestController.update },
 
   { method: "GET", path: "/{param*}", handler: { directory: { path: "./public" } }, options: { auth: false } },
 ];

@@ -1,43 +1,43 @@
-import { PlaylistSpec } from "../models/joi-schemas.js";
+import { PlacemarkSpec } from "../models/joi-schemas.js";
 import { db } from "../models/db.js";
 
 export const dashboardController = {
   index: {
     handler: async function (request, h) {
       const loggedInUser = request.auth.credentials;
-      const playlists = await db.playlistStore.getUserPlaylists(loggedInUser._id);
+      const placemarks = await db.placemarkStore.getUserPlacemarks(loggedInUser._id);
       const viewData = {
-        title: "Playtime Dashboard",
+        title: "PlaceMark Dashboard",
         user: loggedInUser,
-        playlists: playlists,
+        placemarks: placemarks,
       };
       return h.view("dashboard-view", viewData);
     },
   },
 
-  addPlaylist: {
+  addPlacemark: {
     validate: {
-      payload: PlaylistSpec,
+      payload: PlacemarkSpec,
       options: { abortEarly: false },
       failAction: function (request, h, error) {
-        return h.view("dashboard-view", { title: "Add Playlist error", errors: error.details }).takeover().code(400);
+        return h.view("dashboard-view", { title: "Add PlaceMark error", errors: error.details }).takeover().code(400);
       },
     },
     handler: async function (request, h) {
       const loggedInUser = request.auth.credentials;
-      const newPlayList = {
+      const newplacemark = {
         userid: loggedInUser._id,
         title: request.payload.title,
       };
-      await db.playlistStore.addPlaylist(newPlayList);
+      await db.placemarkStore.addPlacemark(newplacemark);
       return h.redirect("/dashboard");
     },
   },
 
-  deletePlaylist: {
+  deletePlacemark: {
     handler: async function (request, h) {
-      const playlist = await db.playlistStore.getPlaylistById(request.params.id);
-      await db.playlistStore.deletePlaylistById(playlist._id);
+      const placemark = await db.placemarkStore.getPlacemarkById(request.params.id);
+      await db.placemarkStore.deletePlacemarkById(placemark._id);
       return h.redirect("/dashboard");
     },
   },

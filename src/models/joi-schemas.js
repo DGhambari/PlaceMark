@@ -21,34 +21,35 @@ export const UserSpecPlus = UserSpec.keys({
 
 export const UserArray = Joi.array().items(UserSpecPlus).label("UserArray");
 
-export const TrackSpec = Joi.object()
+export const PointOfInterestSpec = Joi.object()
   .keys({
-    title: Joi.string().required().example("Piano Sonata No. 7"),
-    artist: Joi.string().required().example("Beethoven"),
-    duration: Joi.number().allow("").optional().example(12),
-    playlistid: IdSpec,
+    category: Joi.string().required().example("Mountains"),
+    title: Joi.string().required().example("Carrauntoohil"),
+    latitude: Joi.number().required().max(90).min(-90).example(51.9990),
+    longitude: Joi.number().required().max(180).min(-180).example(-9.7432),
+    placemarkid: IdSpec,
   })
-  .label("Track");
+  .label("PointOfInterest");
 
-export const TrackSpecPlus = TrackSpec.keys({
+export const PointOfInterestSpecPlus = PointOfInterestSpec.keys({
   _id: IdSpec,
   __v: Joi.number(),
-}).label("TrackPlus");
+}).label("PointOfInterestPlus");
 
-export const TrackArraySpec = Joi.array().items(TrackSpecPlus).label("TrackArray");
+export const PointOfInterestArraySpec = Joi.array().items(PointOfInterestSpecPlus).label("PointOfInterestArray");
 
-export const PlaylistSpec = Joi.object()
+export const PlacemarkSpec = Joi.object()
   .keys({
-    title: Joi.string().required().example("Beethoven Sonatas"),
+    title: Joi.string().required().example("Kerry's Sights"),
     userid: IdSpec,
-    tracks: TrackArraySpec,
+    pointOfInterests: PointOfInterestArraySpec,
   })
-  .label("Playlist");
+  .label("Placemark");
 
-export const PlaylistSpecPlus = PlaylistSpec.keys({
+export const PlacemarkSpecPlus = PlacemarkSpec.keys({
   _id: IdSpec,
   __v: Joi.number(),
-}).label("PlaylistPlus");
+}).label("PlacemarkPlus");
 
-export const PlaylistArraySpec = Joi.array().items(PlaylistSpecPlus).label("PlaylistArray");
+export const PlacemarkArraySpec = Joi.array().items(PlacemarkSpecPlus).label("PlacemarkArray");
 

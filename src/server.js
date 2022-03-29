@@ -26,15 +26,14 @@ if (result.error) {
 
 /*const swaggerOptions = {
   info: {
-    title: "Playtime API",
+    title: "Placemark API",
     version: "0.1"
   }
 };*/
 
 async function init() {
   const server = Hapi.server({
-    port: 3000,
-    host: "localhost"
+    port: process.env.PORT || 3000,
   });
 
   await server.register(Inert);
@@ -81,7 +80,6 @@ async function init() {
   });
   server.auth.default("session");
   
-
   db.init("mongo");
   server.route(webRoutes);
   server.route(apiRoutes);
