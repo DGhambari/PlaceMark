@@ -1,0 +1,28 @@
+{
+  "pointOfInterests": [
+    {
+      "category": "Mountains",
+      "title": "Carrauntoohil",
+      "latitude": "51.998955",
+      "longitude": "-9.743222",
+      "_id": "6205536e-65ce-4bb3-ad92-e81abdc53849",
+      "placemarkid": "df11a3d4-0644-42ee-a38e-853ef2a860b1"
+    },
+    {
+      "category": "Rivers",
+      "title": "River Lee",
+      "latitude": "51.903614",
+      "longitude": "-8.468399",
+      "_id": "6205536e-65ce-4bb3-ad92-e81abdc53849",
+      "placemarkid": "df11a3d4-0644-42ee-a38e-853ef2a860b1"
+    },
+    {
+      "category": "Forests",
+      "title": "Gougane Barra National Forest Park",
+      "latitude": "51.8319",
+      "longitude": "-9.3489",
+      "_id": "6205536e-65ce-4bb3-ad92-e81abdc53849",
+      "placemarkid": "df11a3d4-0644-42ee-a38e-853ef2a860b1"
+    }
+  ]
+}
