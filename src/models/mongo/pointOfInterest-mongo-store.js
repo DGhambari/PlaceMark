@@ -40,11 +40,11 @@ export const pointOfInterestMongoStore = {
   },
 
   async updatePointOfInterest(oldPointOfInterest, updatedPointOfInterest) {
-    const oldPointOfInterest = await PointOfInterest.findOne({ _id: updatedPointOfInterest._id });
-    oldPointOfInterest.category = updatedPointOfInterest.category;
-    oldPointOfInterest.title = updatedPointOfInterest.title;
-    oldPointOfInterest.latitude = updatedPointOfInterest.latitude;
-    oldPointOfInterest.longitude = updatedPointOfInterest.longitude;
+    const pointOfInterest = await PointOfInterest.findOne({ _id: updatedPointOfInterest._id });
+    pointOfInterest.category = updatedPointOfInterest.category;
+    pointOfInterest.title = updatedPointOfInterest.title;
+    pointOfInterest.latitude = updatedPointOfInterest.latitude;
+    pointOfInterest.longitude = updatedPointOfInterest.longitude;
     await oldPointOfInterest.save();
   },
 };
