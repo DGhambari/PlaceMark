@@ -21,15 +21,15 @@ const __dirname = path.dirname(__filename);
 const result = dotenv.config();
 if (result.error) {
   console.log(result.error.message);
-  //process.exit(1);
+  // process.exit(1);
 }
 
-/*const swaggerOptions = {
+/* const swaggerOptions = {
   info: {
     title: "Placemark API",
     version: "0.1"
   }
-};*/
+}; */
 
 async function init() {
   const server = Hapi.server({
@@ -44,10 +44,11 @@ async function init() {
   await server.register([
     Inert,
     Vision,
-    /*{
+    /*
+    {
       plugin: HapiSwagger,
       options: swaggerOptions
-    }*/
+    } */
   ]);
 
   server.validator(Joi);

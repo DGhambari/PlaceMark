@@ -1,7 +1,7 @@
 import { assert } from "chai";
 import { assertSubset } from "../test-utils.js";
 import { placemarkService } from "./placemark-service.js";
-import { maggie, testUsers } from "../fixtures.js";
+import { maggie, maggieCredentials, testUsers } from "../fixtures.js";
 import { db } from "../../src/models/db.js";
 
 const users = new Array(testUsers.length);
@@ -27,12 +27,12 @@ suite("User API tests", () => {
     assert.isDefined(newUser._id);
   });
 
-  test("delete all user", async () => {
+  test("delete all users", async () => {
     let returnedUsers = await placemarkService.getAllUsers();
     assert.equal(returnedUsers.length, 4);
     await placemarkService.deleteAllUsers();
     await placemarkService.createUser(maggie);
-    await placemarkService.authenticate(maggie);
+    await placemarkService.authenticate(maggieCredentials);
     returnedUsers = await placemarkService.getAllUsers();
     assert.equal(returnedUsers.length, 1);
   });

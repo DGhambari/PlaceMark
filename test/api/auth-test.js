@@ -3,23 +3,23 @@ import { placemarkService } from "./placemark-service.js";
 import { decodeToken } from "../../src/api/jwt-utils.js";
 import { maggie } from "../fixtures.js";
 
-suite("Authentication API tests", function() {
+suite("Authentication API tests", async () => {
 
-  setup(async function() {
+  setup(async () => {
     placemarkService.clearAuth()
     await placemarkService.createUser(maggie);
     await placemarkService.authenticate(maggie);
     await placemarkService.deleteAllUsers();
   });
 
-  test("authenticate", async function() {
+  test("authenticate", async () => {
     const returnedUser = await placemarkService.createUser(maggie);
     const response = await placemarkService.authenticate(maggie);
     assert(response.success);
     assert.isDefined(response.token);
   });
 
-  test("verify Token", async function() {
+  test("verify Token", async () =>  {
     const returnedUser = await placemarkService.createUser(maggie);
     const response = await placemarkService.authenticate(maggie);
 
@@ -28,7 +28,7 @@ suite("Authentication API tests", function() {
     assert.equal(userInfo.userId, returnedUser._id);
   });
 
-  test("check Unauthorized", async function() {
+  test("check Unauthorized", async () =>  {
     placemarkService.clearAuth()
     try {
       await placemarkService.deleteAllUsers();
