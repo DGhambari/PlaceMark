@@ -26,6 +26,15 @@ export const userMongoStore = {
     return user;
   },
 
+  async findByName(lastName, firstName) {
+    const candidate = await User.findOne({
+      lastName,
+      firstName,
+    });
+    return candidate;
+  },
+
+
   async deleteUserById(id) {
     try {
       await User.deleteOne({ _id: id });

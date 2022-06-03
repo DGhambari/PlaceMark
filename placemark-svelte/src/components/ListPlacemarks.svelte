@@ -1,4 +1,4 @@
-{{#each placemarks}}
+<!-- {{#each placemarks}}
   <div class="box box-link-hover-shadow">
     <h2 class="title">
       {{title}}
@@ -12,8 +12,7 @@
       <i class="fas fa-trash"></i>
     </a>
   </div>
-{{/each}}
-
+{{/each}} -->
 
 <script>
   import {getContext, onMount} from 'svelte'
@@ -30,7 +29,7 @@
   <thead>
     <th>Amount</th>
     <th>Method</th>
-    <th>Candidate</th>
+    <th>User</th>
     <th>Donor</th>
   </thead>
   <tbody>
@@ -43,7 +42,7 @@
           {placemark.method}
         </td>
         <td>
-          {placemark.candidate.lastName}, {placemark.candidate.firstName}
+          {placemark.user.lastName}, {placemark.user.firstName}
         </td>
         <td>
           {placemark.donor.lastName},  {placemark.donor.firstName}

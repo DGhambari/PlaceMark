@@ -1,7 +1,9 @@
 import * as dotenv from "dotenv";
 import Mongoose from "mongoose";
-import { seedData } from "./seed-data.js";
 import * as mongooseSeeder from "mais-mongoose-seeder";
+import { User } from "./user.js"
+import { Placemark } from "./placemark.js"
+import { seedData } from "./seed-data.js";
 
 
 const seedLib = mongooseSeeder.default;

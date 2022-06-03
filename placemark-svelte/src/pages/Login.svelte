@@ -1,22 +1,9 @@
 <script>
-  //import Menu from "../components/Menu.svelte";
   import WelcomeMenu from "../components/WelcomeMenu.svelte";
-  //import ZLoginForm from "../components/ZLoginForm.svelte";
+  import LoginForm from "../components/LoginForm.svelte";
 </script>
 
 <WelcomeMenu/>
-
 <section class="section">
-  <h1 class="title">Log in</h1>
-  <form action="/authenticate" method="POST">
-    <div class="field">
-      <label class="label">Email</label> <input class="input" type="text" placeholder="Enter email" name="email">
-    </div>
-    <div class="field">
-      <label class="label">Password</label> <input class="input" type="password" placeholder="Enter Password" name="password">
-    </div>
-    <div class="field is-grouped">
-      <button class="button is-link">Submit</button>
-    </div>
-  </form>
+  <LoginForm/>
 </section>
