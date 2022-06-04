@@ -58,4 +58,22 @@ export class PlacemarkService {
       return false;
     }
   }
+
+  async addPlacemark(placemark) {
+    try {
+      const response = await axios.post(`${this.baseUrl }/api/placemarks/`);
+      return response.status === 200;
+    } catch (error) {
+      return false;
+    }
+  }
+
+  async addPointOfInterest(pointOfInterest) {
+    try {
+      const response = await axios.post(`${this.baseUrl }/api/placemarks/`);
+      return response.status === 200;
+    } catch (error) {
+      return false;
+    }
+  }
 }

@@ -1,3 +1,23 @@
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiZGdoYW1iYXJpIiwiYSI6ImNsMHNkcHhtbTBjaTQzamp3YjNhaGh2bG0ifQ.ttV8VrZUju1c2aVCyf7Dxw';
+  const map = new mapboxgl.Map({
+    container: 'map', // container ID
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [-7.7, 53.5], // starting position [lng, lat]
+    zoom: 6 // starting zoom
+  });
+
+  const layerList = document.getElementById('menu');
+  const inputs = layerList.getElementsByTagName('input');
+  for (const input of inputs) {
+    input.onclick = (layer) => {
+    const layerId = layer.target.id;
+    map.setStyle('mapbox://styles/mapbox/' + layerId);
+    };
+  }
+  map.addControl(new mapboxgl.FullscreenControl());
+</script>
+
 <style>
   #menu {
   position: relative;
@@ -25,23 +45,3 @@
   <input id="outdoors-v11" type="radio" name="rtoggle" value="outdoors">
   <label for="outdoors-v11">outdoors</label>
 </div>
-
-<script>
-  mapboxgl.accessToken = 'pk.eyJ1IjoiZGdoYW1iYXJpIiwiYSI6ImNsMHNkcHhtbTBjaTQzamp3YjNhaGh2bG0ifQ.ttV8VrZUju1c2aVCyf7Dxw';
-  const map = new mapboxgl.Map({
-    container: 'map', // container ID
-    style: 'mapbox://styles/mapbox/streets-v11',
-    center: [-7.7, 53.5], // starting position [lng, lat]
-    zoom: 6 // starting zoom
-  });
-
-  const layerList = document.getElementById('menu');
-  const inputs = layerList.getElementsByTagName('input');
-  for (const input of inputs) {
-    input.onclick = (layer) => {
-    const layerId = layer.target.id;
-    map.setStyle('mapbox://styles/mapbox/' + layerId);
-    };
-  }
-  map.addControl(new mapboxgl.FullscreenControl());
-</script>
