@@ -2,6 +2,7 @@
   import Menu from "../components/Menu.svelte";
   import ListPlacemarks from "../components/ListPlacemarks.svelte";
   import AddPlacemark from "../components/AddPlacemark.svelte";
+  // import MapBox from "../components/MapBox.svelte";
   import Analytics from "../components/Analytics.svelte";
   import {getContext} from "svelte";
 
@@ -13,5 +14,6 @@
 
 <section class="section">
   <ListPlacemarks/>
+  <!-- <MapBox/> -->
   <AddPlacemark/>
 </section>

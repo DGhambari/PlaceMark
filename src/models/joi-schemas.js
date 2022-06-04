@@ -24,9 +24,9 @@ export const UserArray = Joi.array().items(UserSpecPlus).label("UserArray");
 export const PointOfInterestSpec = Joi.object()
   .keys({
     category: Joi.string().required().example("Mountains"),
-    title: Joi.string().required().example("Carrauntoohil"),
-    latitude: Joi.number().required().max(90).min(-90).example(51.9990),
-    longitude: Joi.number().required().max(180).min(-180).example(-9.7432),
+    place: Joi.string().required().example("Carrauntoohil"),
+    lat: Joi.number().required().max(90).min(-90).example(51.9990),
+    lng: Joi.number().required().max(180).min(-180).example(-9.7432),
     placemarkid: IdSpec,
   })
   .label("PointOfInterest");

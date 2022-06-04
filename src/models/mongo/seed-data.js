@@ -25,6 +25,25 @@ export const seedData = {
       password: "secret",
       _id: "621f2bf90f8832d1b1b3634a",
       __v: 0,
+    },    
+  },
+  placemarks: {
+    _model: "Placemark",
+    river: {
+      title: "Rivers",
+      _id: "621f2bf90f8832d1b1b1234c",
+      __v: 0,
     }
   },
+  // pointOfInterest: {
+  //   _model: "pointOfInterest",
+  //   nationalParks: {
+  //     title: "National Parks",
+  //     lat: "-7",
+  //     lng: "55",
+  //     img: "https://res.cloudinary.com/dghambari/image/upload/v1654347457/obznixwgc7uoamldrh14.jpg",
+  //     _id: "621f2bf90f8832d1b1b1234c",
+  //     __v: 0,
+  //   }
+  // },
 };

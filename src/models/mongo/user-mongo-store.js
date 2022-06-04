@@ -34,7 +34,6 @@ export const userMongoStore = {
     return candidate;
   },
 
-
   async deleteUserById(id) {
     try {
       await User.deleteOne({ _id: id });

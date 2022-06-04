@@ -26,4 +26,7 @@ export const webRoutes = [
   { method: "POST", path: "/pointOfInterest/{id}/updatepointOfInterest/{pointOfInterestid}", config: pointOfInterestController.update },
 
   { method: "GET", path: "/{param*}", handler: { directory: { path: "./public" } }, options: { auth: false } },
+
+  { method: "POST", path: "/placemark/{id}/uploadimage", config: placemarkController.uploadImage },
+  
 ];

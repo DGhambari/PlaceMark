@@ -16,11 +16,11 @@ export const db = {
 
   init(storeType) {
     switch (storeType) {
-      case "json" :
-        this.userStore = userJsonStore;
-        this.placemarkStore = placemarkJsonStore;
-        this.pointOfInterestStore = pointOfInterestJsonStore;
-        break;
+      // case "json" :
+      //   this.userStore = userJsonStore;
+      //   this.placemarkStore = placemarkJsonStore;
+      //   this.pointOfInterestStore = pointOfInterestJsonStore;
+      //   break;
       case "mongo" :
         this.userStore = userMongoStore;
         this.placemarkStore = placemarkMongoStore;
@@ -28,9 +28,9 @@ export const db = {
         connectMongo();
         break;
       default :
-        this.userStore = userMemStore;
-        this.placemarkStore = placemarkMemStore;
-        this.pointOfInterestStore = pointOfInterestMemStore;
+        // this.userStore = userMemStore;
+        // this.placemarkStore = placemarkMemStore;
+        // this.pointOfInterestStore = pointOfInterestMemStore;
     }
   }
 };

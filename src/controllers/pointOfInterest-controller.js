@@ -27,9 +27,9 @@ export const pointOfInterestController = {
       const pointOfInterest = await db.pointOfInterestStore.getPointOfInterestById(request.params.pointOfInterestid);
       const newPointOfInterest = {
         category: request.payload.category,
-        title: request.payload.title,
-        latitude: request.payload.latitude,
-        longitude: Number(request.payload.longitude),
+        place: request.payload.place,
+        lat: request.payload.lat,
+        lng: request.payload.lng,
       };
       await db.pointOfInterestStore.updatePointOfInterest(pointOfInterest, newPointOfInterest);
       return h.redirect(`/placemark/${request.params.id}`);

@@ -25,7 +25,7 @@
   <input id="outdoors-v11" type="radio" name="rtoggle" value="outdoors">
   <label for="outdoors-v11">outdoors</label>
 </div>
-<br></br>
+
 <script>
   mapboxgl.accessToken = 'pk.eyJ1IjoiZGdoYW1iYXJpIiwiYSI6ImNsMHNkcHhtbTBjaTQzamp3YjNhaGh2bG0ifQ.ttV8VrZUju1c2aVCyf7Dxw';
   const map = new mapboxgl.Map({

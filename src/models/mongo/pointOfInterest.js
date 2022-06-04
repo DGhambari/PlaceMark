@@ -4,12 +4,12 @@ const { Schema } = Mongoose;
 
 const pointOfInterestSchema = new Schema({
   category: String,
-  title: String,
-  latitude: Number,
-  longitude: Number,
+  place: String,
+  lat: Number,
+  lng: Number,
   placemarkid: {
     type: Schema.Types.ObjectId,
-    ref: "Placemark",
+    ref: "Point of Interest",
   },
 });
 

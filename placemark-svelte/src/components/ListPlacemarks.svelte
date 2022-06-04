@@ -27,25 +27,25 @@
 
 <table class="table is-fullwidth">
   <thead>
-    <th>Amount</th>
-    <th>Method</th>
-    <th>User</th>
-    <th>Donor</th>
+    <th>Category</th>
+    <th>Name</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
   </thead>
   <tbody>
     {#each placemarkList as placemark}
       <tr>
         <td>
-          {placemark.amount}
+          {placemark.category}
         </td>
         <td>
-          {placemark.method}
+          {placemark.place}
         </td>
         <td>
-          {placemark.user.lastName}, {placemark.user.firstName}
+          {placemark.lat},
         </td>
         <td>
-          {placemark.donor.lastName},  {placemark.donor.firstName}
+          {placemark.lng},
         </td>
       </tr>
     {/each}

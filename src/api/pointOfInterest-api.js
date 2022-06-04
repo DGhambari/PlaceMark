@@ -18,8 +18,8 @@ export const pointOfInterestApi = {
     },
     tags: ["api"],
     response: { schema: PointOfInterestArraySpec, failAction: validationError },
-    description: "Get all pointOfInterestApi",
-    notes: "Returns all pointOfInterestApi",
+    description: "Get all Points of Interest Api",
+    notes: "Returns all Points of Interest Api",
   },
 
   findOne: {
@@ -30,11 +30,11 @@ export const pointOfInterestApi = {
       try {
         const pointOfInterest = await db.pointOfInterestStore.getPointOfInterestById(request.params.id);
         if (!pointOfInterest) {
-          return Boom.notFound("No pointOfInterest with this id");
+          return Boom.notFound("No Point of Interest with this id");
         }
         return pointOfInterest;
       } catch (err) {
-        return Boom.serverUnavailable("No pointOfInterest with this id");
+        return Boom.serverUnavailable("No Point of Interest with this id");
       }
     },
     tags: ["api"],
@@ -54,14 +54,14 @@ export const pointOfInterestApi = {
         if (pointOfInterest) {
           return h.response(pointOfInterest).code(201);
         }
-        return Boom.badImplementation("error creating pointOfInterest");
+        return Boom.badImplementation("Error creating a Point of Interest");
       } catch (err) {
         return Boom.serverUnavailable("Database Error");
       }
     },
     tags: ["api"],
-    description: "Create a pointOfInterest",
-    notes: "Returns the newly created pointOfInterest",
+    description: "Create a Point Of Interest",
+    notes: "Returns the newly created Point of Interest",
     validate: { payload: PointOfInterestSpec },
     response: { schema: PointOfInterestSpecPlus, failAction: validationError },
   },
@@ -79,7 +79,7 @@ export const pointOfInterestApi = {
       }
     },
     tags: ["api"],
-    description: "Delete all Point of Interest Api",
+    description: "Delete all Points of Interest Api",
   },
 
   deleteOne: {
@@ -99,7 +99,7 @@ export const pointOfInterestApi = {
       }
     },
     tags: ["api"],
-    description: "Delete a pointOfInterest",
+    description: "Delete a Point of Interest",
     validate: { params: { id: IdSpec }, failAction: validationError },
   },
 };
