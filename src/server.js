@@ -9,11 +9,15 @@ import jwt from "hapi-auth-jwt2";
 // import HapiSwagger from "hapi-swagger";
 import { fileURLToPath } from "url";
 import Handlebars from "handlebars";
+// import express from "express";
+// import cors from "cors";
 import { webRoutes } from "./web-routes.js";
 import { db } from "./models/db.js";
 import { accountsController } from "./controllers/accounts-controller.js";
 import { validate } from "./api/jwt-utils.js";
 import { apiRoutes } from "./api-routes.js";
+
+// const app = express();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -30,6 +34,14 @@ if (result.error) {
     version: "0.1"
   }
 }; */
+
+// app.use(cors({
+//   origin: "http://localhost:4000"
+// }));
+
+// app.get("/", (req, res) => {
+//   res.send("CORS solved")
+// })
 
 async function init() {
   const server = Hapi.server({
